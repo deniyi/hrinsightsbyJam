@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Precarity Allowance Across All 17 OHADA Member States</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --paper: #f5f0e8;
+    --accent: #c8522a;
+    --muted: #7a6e60;
+    --rule: #d4c9b5;
+    --highlight: #fff3e0;
+    --green: #2e6b3e;
+    --amber: #b07a20;
+    --red: #932020;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .masthead {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    padding: 56px 24px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.03) 60px, rgba(255,255,255,0.03) 61px);
+  }
+
+  .kicker {
+    font-family: 'Source Serif 4', serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 820px;
+    margin: 0 auto 20px;
+  }
+
+  .deck {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: #c9bfaf;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .byline-bar {
+    background: var(--accent);
+    padding: 10px 24px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  article {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+
+  p { margin-bottom: 1.4em; }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 2.4em 0 0.6em;
+    color: var(--ink);
+    border-left: 4px solid var(--accent);
+    padding-left: 16px;
+  }
+
+  .lead {
+    font-size: 1.15em;
+    font-weight: 400;
+    color: #3a3028;
+    border-left: 3px solid var(--rule);
+    padding-left: 20px;
+    margin-bottom: 2em;
+  }
+
+  .pullquote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.35rem;
+    line-height: 1.5;
+    color: var(--accent);
+    border-top: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding: 24px 0;
+    margin: 2.5em 0;
+    text-align: center;
+  }
+
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+    font-size: 0.84em;
+    background: white;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  }
+
+  .comp-table th {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 11px 14px;
+    text-align: left;
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    font-size: 0.8em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .comp-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .comp-table tr:last-child td { border-bottom: none; }
+  .comp-table tr:nth-child(even) td { background: #faf7f2; }
+  .comp-table td.country { font-weight: 600; white-space: nowrap; }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 0.88em;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .badge-explicit { background: #d4edda; color: #155724; }
+  .badge-decree   { background: #fff3cd; color: #856404; }
+  .badge-silent   { background: #f8d7da; color: #721c24; }
+
+  .rate { font-weight: 700; color: var(--accent); }
+  .silent { font-weight: 600; color: var(--red); }
+  .decree { font-weight: 600; color: var(--amber); }
+
+  .table-legend {
+    font-size: 0.8em;
+    color: var(--muted);
+    margin-top: -1em;
+    margin-bottom: 2em;
+    padding-left: 4px;
+  }
+
+  .table-legend span { margin-right: 16px; }
+
+  .callout {
+    background: var(--highlight);
+    border: 1px solid #e8d5b5;
+    border-left: 4px solid var(--accent);
+    padding: 20px 24px;
+    margin: 2em 0;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .callout strong {
+    display: block;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.8em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .checklist {
+    list-style: none;
+    margin: 1em 0 2em;
+    padding: 0;
+  }
+
+  .checklist li {
+    padding: 7px 0 7px 32px;
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .checklist li::before {
+    content: '→';
+    position: absolute;
+    left: 8px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .closing-question {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 40px 36px;
+    margin: 3em 0 0;
+    text-align: center;
+    border-radius: 4px;
+  }
+
+  .closing-question p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: #e8e0d4;
+  }
+
+  .closing-question .cq-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    font-style: normal;
+    font-family: 'Source Serif 4', serif;
+  }
+
+  .disclaimer {
+    font-size: 0.78em;
+    color: var(--muted);
+    border-top: 1px solid var(--rule);
+    margin-top: 3em;
+    padding-top: 1em;
+    font-style: italic;
+  }
+
+  em { color: var(--accent); font-style: italic; }
+  .rule { border: none; border-top: 1px solid var(--rule); margin: 2.5em 0; }
+
+  .author-box {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 3em;
+    padding: 24px 28px;
+    background: white;
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--accent);
+  }
+
+  .author-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .author-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 2px;
+  }
+
+  .author-title {
+    font-size: 0.85rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 640px) {
+    .comp-table { font-size: 0.75em; }
+    .comp-table th, .comp-table td { padding: 9px 10px; }
+    .badge { font-size: 0.78em; padding: 2px 6px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <p class="kicker">Labour Law · OHADA Zone · All 17 Member States</p>
+  <h1>The Precarity Allowance Across All 17 OHADA Member States: A Complete Overview</h1>
+  <p class="deck">A country-by-country map of an entitlement millions of fixed-term workers deserve to know about — and too many employers still overlook.</p>
+</div>
+<div class="byline-bar">By <strong>Jamiu Adekanmbi</strong> &nbsp;·&nbsp; Doctoral Candidate / HR Leader &nbsp;·&nbsp; OHADA Zone &nbsp;·&nbsp; Extended Edition</div>
+
+<article>
+
+  <p class="lead">A fixed-term employee's contract ends in Abidjan, Dakar, Kinshasa, or Niamey. The HR team issues the final payslip. He signs the settlement document, and that's that. But one question quietly goes unasked: did he receive everything he was legally owed? In too many cases, the answer is no — and the missing line item is called the <em>indemnité de précarité</em>, or precarity allowance. Here is the complete picture across all 17 OHADA member states.</p>
+
+  <p>For many HR professionals in the OHADA zone, this term calls to mind French labour law. That is a geographical and legal mistake. The precarity allowance — also known as the end-of-contract indemnity — exists in the Labour Codes of francophone Africa in various forms and at varying rates. Its underlying logic, however, is universal: to compensate the worker for the inherent instability of fixed-term employment.</p>
+
+  <h2>What the Precarity Allowance Is</h2>
+
+  <p>When an employee accepts a fixed-term contract (<em>CDD — contrat à durée déterminée</em>), they are, at least temporarily, giving up the security of a permanent position. When that contract ends and no permanent role follows, the law recognises a financial compensation for having borne that instability. It is a wage supplement, calculated on the total gross remuneration earned over the life of the contract and paid at the point of final settlement.</p>
+
+  <p>It is distinct from notice pay, severance indemnity, and accrued holiday pay. It is a right unique to the condition of the fixed-term worker.</p>
+
+  <div class="pullquote">
+    "This is not a favour granted to the employee. It is the legal counterpart of the risk they agreed to carry."
+  </div>
+
+  <h2>A Critical Reminder: OHADA Does Not (Yet) Govern Labour Law</h2>
+
+  <p>OHADA harmonises business law, not labour law. A Uniform Act on Labour Law has been in development for years, but as of today, <strong>each member state retains its own national Labour Code.</strong> The rules on the precarity allowance therefore differ significantly from one country to the next — which is precisely what this overview sets out to clarify.</p>
+
+  <h2>All 17 OHADA Member States: The State of the Law</h2>
+
+  <p>Here is the situation in each of the 17 member states, with a distinction between countries that provide an <span class="badge badge-explicit">explicit rate</span> in statute, those that defer the rate to a <span class="badge badge-decree">decree or collective agreement</span>, and those where the law is <span class="badge badge-silent">silent</span> on this entitlement.</p>
+
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th>Status</th>
+        <th>Rate / Situation</th>
+        <th>Legal Reference</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="country">🇫🇷 France<br><small style="color:var(--muted);font-weight:300">(benchmark)</small></td>
+        <td><span class="badge badge-explicit">Explicit rate</span></td>
+        <td><span class="rate">10%</span> (or 6% where a training plan is provided)</td>
+        <td>Art. L.1243-8 Labour Code</td>
+      </tr>
+      <tr>
+        <td class="country">🇧🇯 Benin</td>
+        <td><span class="badge badge-silent">Silent</span></td>
+        <td><span class="silent">No specific provision identified</span> in the 1998 Labour Code (Law No. 98-004) for a precarity allowance at normal CDD expiry.</td>
+        <td>Law No. 98-004 of 27 Jan. 1998</td>
+      </tr>
+      <tr>
+        <td class="country">🇧🇫 Burkina Faso</td>
+        <td><span class="badge badge-silent">Silent</span></td>
+        <td><span class="silent">No indemnity or notice</span> at CDD expiry under Art. 14.8 of the Labour Code (Law No. 033-2004). The contract terminates without a specific precarity payment.</td>
+        <td>Art. 14.8 Law No. 033-2004</td>
+      </tr>
+      <tr>
+        <td class="country">🇨🇲 Cameroon</td>
+        <td><span class="badge badge-silent">Silent</span></td>
+        <td><span class="silent">No specific end-of-contract indemnity</span> for a CDD that has run its normal course. The 1992 Code does not provide for a precarity payment at term.</td>
+        <td>Law No. 92-007 of 14 Aug. 1992</td>
+      </tr>
+      <tr>
+        <td class="country">🇨🇫 CAR (Centrafrique)</td>
+        <td><span class="badge badge-decree">Decree/Convention</span></td>
+        <td><span class="decree">Rate deferred to collective agreements</span> and implementing decrees. No explicitly stated statutory rate in the Labour Code itself.</td>
+        <td>Labour Code of the CAR</td>
+      </tr>
+      <tr>
+        <td class="country">🇰🇲 Comoros</td>
+        <td><span class="badge badge-silent">Silent</span></td>
+        <td><span class="silent">No provision identified</span> for a specific precarity allowance in the Comorian Labour Code. Fixed-term contracts are poorly regulated in statute.</td>
+        <td>Comorian Labour Code</td>
+      </tr>
+      <tr>
+        <td class="country">🇨🇬 Congo-Brazzaville</td>
+        <td><span class="badge badge-silent">Silent</span></td>
+        <td><span class="silent">No specific precarity allowance</span> at normal CDD expiry under the 1996 Code. The "final settlement" does not include this indemnity at term.</td>
+        <td>Law No. 6-96 of 6 March 1996</td>
+      </tr>
+      <tr>
+        <td class="country">🇨🇩 DRC (Congo-Kinshasa)</td>
+        <td><span class="badge badge-explicit">Explicit rate</span></td>
+        <td><span class="rate">5%</span> of total salaries received over the entire contract duration. Not owed if the CDD converts to a CDI or if the employee refuses an equivalent CDI offer.</td>
+        <td>Arts. 37–46 Labour Code 2002</td>
+      </tr>
+      <tr>
+        <td class="country">🇨🇮 Côte d'Ivoire</td>
+        <td><span class="badge badge-explicit">Explicit rate</span></td>
+        <td><span class="rate">3%</span> of total gross salaries received during the contract period.</td>
+        <td>Art. 15.8 Labour Code</td>
+      </tr>
+      <tr>
+        <td class="country">🇬🇶 Equatorial Guinea</td>
+        <td><span class="badge badge-decree">Decree/Convention</span></td>
+        <td><span class="decree">No expressly stated statutory rate.</span> Deferred to sectoral collective agreements. (Partially Spanish-speaking; labour law of Spanish influence.)</td>
+        <td>Labour Code (Ley del Trabajo)</td>
+      </tr>
+      <tr>
+        <td class="country">🇬🇳 Guinea (Conakry)</td>
+        <td><span class="badge badge-explicit">Explicit rate</span></td>
+        <td><span class="rate">5%</span> paid to the employee at CDD expiry. Also owed, in addition to damages, where the employer terminates the contract early without valid cause.</td>
+        <td>Art. 121 Labour Code 2014</td>
+      </tr>
+      <tr>
+        <td class="country">🇬🇼 Guinea-Bissau</td>
+        <td><span class="badge badge-silent">Silent</span></td>
+        <td><span class="silent">No explicit provision identified</span> in the Guinea-Bissau Labour Code. The country's legislative texts are among the least publicly available in the zone.</td>
+        <td>Guinea-Bissau Labour Code</td>
+      </tr>
+      <tr>
+        <td class="country">🇲🇱 Mali</td>
+        <td><span class="badge badge-decree">Decree/Convention</span></td>
+        <td><span class="decree">Rate set by collective agreement or decree.</span> The Code explicitly recognises the entitlement but does not specify a statutory rate in the law itself.</td>
+        <td>Art. L.23 Labour Code 1992</td>
+      </tr>
+      <tr>
+        <td class="country">🇳🇪 Niger</td>
+        <td><span class="badge badge-decree">Decree/Convention</span></td>
+        <td><span class="decree">Rate deferred to collective agreements</span> or regulatory texts. The Niger Labour Code recognises the principle without setting a single legal rate.</td>
+        <td>Labour Code of Niger</td>
+      </tr>
+      <tr>
+        <td class="country">🇸🇳 Senegal</td>
+        <td><span class="badge badge-explicit">Explicit rate</span></td>
+        <td><span class="rate">7%</span> of the total gross remuneration due to the worker over the contract duration.</td>
+        <td>Art. L.47 Labour Code 1997</td>
+      </tr>
+      <tr>
+        <td class="country">🇹🇩 Chad</td>
+        <td><span class="badge badge-decree">Decree/Convention</span></td>
+        <td><span class="decree">No expressly stated rate</span> in the Chadian Labour Code. The principle is acknowledged but modalities are deferred to decrees and collective agreements.</td>
+        <td>Labour Code of Chad</td>
+      </tr>
+      <tr>
+        <td class="country">🇹🇬 Togo</td>
+        <td><span class="badge badge-decree">Decree/Convention</span></td>
+        <td><span class="decree">No statutory rate in the law.</span> The 2021 Labour Code (Law No. 2021-012) governs CDDs without specifying a rate for the precarity allowance. Deferred to collective agreements.</td>
+        <td>Law No. 2021-012 of 18 June 2021</td>
+      </tr>
+      <tr>
+        <td class="country">🇬🇦 Gabon</td>
+        <td><span class="badge badge-silent">Silent</span></td>
+        <td><span class="silent">No specific precarity allowance.</span> Art. 60 of the 2021 Labour Code states that a CDD "terminates at expiry without a termination indemnity, except for accrued holiday pay".</td>
+        <td>Art. 60 Law No. 022/2021</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="table-legend">
+    <span><span class="badge badge-explicit">Explicit rate</span> Statutory rate stated in law</span>
+    <span><span class="badge badge-decree">Decree/Convention</span> Rate deferred to lower-level text</span>
+    <span><span class="badge badge-silent">Silent</span> No provision identified</span>
+  </p>
+
+  <h2>What This Table Reveals</h2>
+
+  <p>Only four countries provide an explicit, directly applicable statutory rate: the <strong>DRC</strong> (5%), <strong>Côte d'Ivoire</strong> (3%), <strong>Guinea Conakry</strong> (5%), and <strong>Senegal</strong> (7%). These are the markets where the obligation is clearest and where the risk of litigation for non-payment is most immediate.</p>
+
+  <p>In five other countries — <strong>Mali, Niger, Togo, Chad, and the Central African Republic</strong> — the entitlement is recognised in principle but its rate is deferred to collective agreements or implementing decrees. This means the applicable sectoral collective agreement may provide stronger protection than the statute's silence, and employers <em>must</em> consult it before closing out any fixed-term contract.</p>
+
+  <p>The remaining eight countries — <strong>Benin, Burkina Faso, Cameroon, Comoros, Congo-Brazzaville, Gabon, Guinea-Bissau</strong> — present either statutory silence or an express provision for no indemnity at normal term. A critical caveat: the absence of a statutory rate does not necessarily mean no sectoral collective agreement fills the gap.</p>
+
+  <div class="callout">
+    <strong>⚠ Critical Point: The Collective Agreement Overrides Statutory Silence</strong>
+    In countries where the Labour Code is silent on the precarity allowance, a sectoral collective agreement may very well provide for it — and it will then be binding on the employer. Failing to consult the collective agreement applicable to your sector is a compliance error that labour tribunals penalise with increasing regularity.
+  </div>
+
+  <h2>Grey Areas Common Across the Entire Zone</h2>
+
+  <p><strong>Renewed fixed-term contracts:</strong> In countries where the allowance is owed, it is calculated on the total duration of the precarious employment relationship, including all renewals. It is not calculated per individual contract, but across the entire period.</p>
+
+  <p><strong>Conversion to a permanent contract:</strong> Wherever the allowance is provided for, it is not owed if the fixed-term contract leads directly to a permanent CDI for an equivalent role. The precarity ends; the compensation for it ends too.</p>
+
+  <p><strong>Early termination:</strong> Where the worker terminates the contract early, or where termination follows from their own serious misconduct, the allowance is generally not owed. Where the employer terminates without valid cause, the allowance remains owed alongside any damages.</p>
+
+  <p><strong>The internship loophole:</strong> The use of internship agreements as a substitute for fixed-term contracts — sidestepping end-of-contract obligations entirely — is a growing reclassification risk across the OHADA zone wherever genuine subordinate work is performed.</p>
+
+  <h2>Why This Goes Beyond Compliance</h2>
+
+  <p>In economies where inflation regularly erodes household purchasing power, the fixed-term worker bears the market's instability alone, on behalf of the business. The precarity allowance is labour law's chosen response to rebalance that burden. Failing to pay it is not a saving — it is a deferred liability, with interest that is financial, legal, and reputational.</p>
+
+  <h2>What You Should Review Today</h2>
+
+  <ul class="checklist">
+    <li>Identify which country each of your fixed-term contracts is executed in — the applicable rules are those of the country of execution, not the company's registered seat.</li>
+    <li>Consult both the applicable national Labour Code AND the sectoral collective agreement for your industry.</li>
+    <li>For countries with an explicit rate (DRC, Côte d'Ivoire, Guinea, Senegal), integrate the allowance into your payroll system from the moment the CDD is signed.</li>
+    <li>For countries with a deferred rate (Mali, Niger, Togo, Chad, CAR), ask your legal counsel to confirm the applicable rate via the relevant collective agreement.</li>
+    <li>For silent countries (Benin, Burkina, Cameroon, Gabon, etc.), verify whether the sectoral collective agreement fills the statutory gap.</li>
+    <li>Do your CDD templates include a clause on the end-of-contract indemnity consistent with local legislation?</li>
+    <li>Does your offboarding process include a systematic check before the final settlement document is issued?</li>
+  </ul>
+
+  <hr class="rule">
+
+  <div class="closing-question">
+    <p class="cq-label">Join the conversation</p>
+    <p>In your country, does the precarity allowance appear systematically on your final fixed-term payslips? Have you ever navigated a statutory gap in one of these jurisdictions — and how did you handle it in practice?</p>
+  </div>
+
+  <p class="disclaimer">⚠ This article is for informational and educational purposes. The data presented reflects the state of national Labour Codes available at the time of publication. Sectoral collective agreements and implementing decrees may modify statutory obligations. Consult a specialist in local employment law before making any compliance decision.</p>
+
+  <div class="author-box">
+    <div class="author-avatar">JA</div>
+    <div class="author-info">
+      <p class="author-name">Jamiu Adekanmbi</p>
+      <p class="author-title">Doctoral Candidate / HR Leader</p>
+    </div>
+  </div>
+
+</article>
+</body>
+</html>
